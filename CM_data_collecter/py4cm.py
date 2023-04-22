@@ -12,27 +12,31 @@ from ASAM.XIL.Interfaces.Testbench.MAPort.Enum.MAPortState import MAPortState
 from ASAM.XIL.Interfaces.Testbench.Common.Error.TestbenchPortException import TestbenchPortException
 from ASAM.XIL.Interfaces.Testbench.Common.Capturing.Enum.CaptureState import CaptureState
 
+# START ============================================
+# USE SETTING ======================================
+simtime = 1000.0
+capture_start = 1.0
+trg_testrun = "demo1"
+rec_num = 1
+down_sample_rate = 10
+
+var_list = [
+    "Time", 
+    "Car.ax", "Car.ay", "Car.YawAcc",
+    "Car.vx", "Car.vy", "Car.YawRate",
+    # "Car.Aero.Frx_1.x",
+    # "Car.WheelSpd_FL", "Car.WheelSpd_FR", "Car.WheelSpd_RL", "Car.WheelSpd_RR",
+    # "Car.FxFL", "Car.FxFR", 
+    "Car.FxRL", "Car.FxRR",
+    # "Car.FyFL", "Car.FyFR", 
+    "Car.FyRL", "Car.FyRR",
+    "VC.Steer.Ang"
+    ]
+# END  =============================================
+# USE SETTING ======================================
+
 def main():
     DemoMAPort = None
-
-    # rec config
-    simtime = 1000.0
-    capture_start = 1.0
-    trg_testrun = "demo1"
-    rec_num = 1
-    down_sample_rate = 10
-    var_list = [
-        "Time", 
-        "Car.ax", "Car.ay", "Car.YawAcc",
-        "Car.vx", "Car.vy", "Car.YawRate",
-        # "Car.Aero.Frx_1.x",
-        # "Car.WheelSpd_FL", "Car.WheelSpd_FR", "Car.WheelSpd_RL", "Car.WheelSpd_RR",
-        # "Car.FxFL", "Car.FxFR", 
-        "Car.FxRL", "Car.FxRR",
-        # "Car.FyFL", "Car.FyFR", 
-        "Car.FyRL", "Car.FyRR",
-        "VC.Steer.Ang"
-        ]
 
     # reporter config
     cur_dir = os.getcwd()
