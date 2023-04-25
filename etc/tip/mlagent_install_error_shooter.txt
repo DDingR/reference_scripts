@@ -1,0 +1,15 @@
+conda create -n unity python=3.8.6
+conda activate unity
+
+
+pip install ~/Downloads/torch-1.8.0a0-cp38-cp38-macosx_11_0_arm64.whl
+pip install torchvision
+pip install torchaudio
+
+conda install grpcio h5py
+
+
+pip install -e ./ml-agents-envs
+pip install -e ./ml-agents
+
+https://soan.jp/m1-mac-unity-ml-agents-release-18
